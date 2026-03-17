@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IDDO</title>
+       <meta name="description" content="IDDO is single page PSD website">
+
+    <link rel="icon" href="img/jack.webp">
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" media="print" onload="this.media='screen'">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" media="print" onload="this.media='screen'">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" media="print" onload="this.media='screen'">
+</head>
   <body id="home">
    <header>
     <div class="container">
@@ -49,7 +55,7 @@
     <section class="wrap-3" id="services">
         <div class="container">
             <div class="row">
-                <div class="col-4 col-t-6 col-p-12"><h2>OUR SERVICES.</h2></div>
+                <div class="col-4 col-t-6 col-p-12"><h2 data-aos="fade-up">OUR SERVICES.</h2></div>
                 <div class="col-8 col-t-12 ">
                     <div class="row gy-4">
                         <div class="col-6 col-p-12">
@@ -106,7 +112,7 @@
     <section class="wrap-5" id="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-4 col-t-6 col-p-12"><h2>OUR WORKS.</h2>
+                <div class="col-4 col-t-6 col-p-12"><h2 data-aos="fade-down">OUR WORKS.</h2>
                 <button class="btn active">All</button><button class="btn">Website</button><button class="btn">Branding</button>
                 </div>
             </div>
@@ -228,16 +234,32 @@
         <div class="container">
             <div class="row">
                 <div class="col-2"></div>
-                <div class="col-8 col-t-12"><blockquote>
-                    <p><q>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem. </q></p>
-                    <footer><img src="img/jack.webp"  alt="jack efron" width="70" height="70" loading="lazy">
-                    <b>JACK EFRON</b></footer>
-                </blockquote>
-            <ul class="pager flex justify-center">
-                <li><a class="active" href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-            </ul>
+                <div class="col-8 col-t-12">
+                    
+             <div class="reviews">
+                        <blockquote>
+                        <p><q>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.</q></p>
+                        <footer>
+                            <img src="img/jack.webp" alt="jack efron" width="70" height="70" loading="lazy">
+                            <b>JACK EFRON 1</b>
+                        </footer>
+                    </blockquote>
+                      <blockquote>
+                        <p><q>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.</q></p>
+                        <footer>
+                            <img src="img/jack.webp" alt="jack efron" width="70" height="70" loading="lazy">
+                            <b>JACK EFRON 2</b>
+                        </footer>
+                    </blockquote>
+                     <blockquote>
+                        <p><q>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiamvoluptatem.</q></p>
+                        <footer>
+                            <img src="img/jack.webp" alt="jack efron" width="70" height="70" loading="lazy">
+                            <b>JACK EFRON 3</b>
+                        </footer>
+                    </blockquote>
+                    </div>
+        
         </div>
                 <div class="col-2"></div>
             </div>
@@ -246,7 +268,7 @@
     <section class="wrap-7" id="about">
         <div class="container">
         <div class="row">
-                <div class="col-4 col-t-6 col-p-12"><h2>OUR TEAM.</h2>
+                <div class="col-4 col-t-6 col-p-12"><h2  data-aos="flip-left">OUR TEAM.</h2>
                 </div>
             </div>
             <div class="row">
@@ -384,7 +406,7 @@
     <section class="wrap-9">
         <div class="container">
         <div class="row">
-                <div class="col-4 col-t-6 col-p-12"><h2>OUR SKILLS.</h2>
+                <div class="col-4 col-t-6 col-p-12"><h2 data-aos="zoom-in">OUR SKILLS.</h2>
                 </div>
             </div>
             <div class="row">
@@ -493,83 +515,12 @@
             <button><span class="fa fa-chevron-up"></span></button>
         </div>
         </footer>
-        <script src="js/jquery.min.js"></script>
-        <script>
-        $("#portfolio .btn").click(function(){
-        $("#portfolio .btn").removeClass("active");
-        $(this).addClass("active");
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-        if( $(this).text()=="All" ){
-            $("#portfolio .all").fadeIn();
-        }
-        else if( $(this).text()=="Website" ){
-            $("#portfolio .all").fadeOut(0);
-            $("#portfolio .website").fadeIn();
-        }
-        else{
-            $("#portfolio .all").fadeOut(0);
-            $("#portfolio .brand").fadeIn();
-        }
-    });
-
-     $("#portfolio .seemore").click(function(){
-        $(this).children("span").toggleClass("fa-minus-circle");
-        // $(".wrap-5 .all:nth-child(7),.wrap-5 .all:nth-child(8),.wrap-5 .all:nth-child(9)").slideToggle();
-         $(".wrap-5 .all:nth-last-child(-n+3)").slideToggle();
-    });
-
-    $(".wrap-7 .seemore").click(function(){
-        $(this).children("span").toggleClass("fa-minus-circle");
-        // $(".wrap-7 .all:nth-child(4),.wrap-7 .all:nth-child(5),.wrap-7 .all:nth-child(6)").slideToggle();
-        $(".wrap-7 .all:nth-last-child(-n+3)").slideToggle();
-    });
-
-    $(".accordion a").click(function(e){
-        e.preventDefault();
-        $(".accordion a").removeClass("active");
-        $(this).addClass("active");
-        $(".accordion p").slideUp();
-        $(this).next("p").slideDown();
-    });
-
-     $(".signup").click(function(){
-        $("body").append(`<div class="overlay"></div>`);
-        $("body").css({'overflow-y':'hidden'});
-        $("body").append(`<div class="popover"></div>`);
-        $(".popover").load("form.html",function(){ 
-            $(".popover #name").focus();
-            $(".close,.overlay").click(function(){
-                $(".popover,.overlay").remove();
-                 $("body").css({'overflow-y':'auto'});
-            });
-            $(window).keyup(function(e){
-                if(e.which==27){
-                    $(".popover,.overlay").remove();
-                    $("body").css({'overflow-y':'auto'});
-                }
-            });
-        });
-    });
-
-      $(".wrap-13 button").click(function(){
-        $(window).scrollTop(0);
-    });
-
-    
-    $(".menu").click(function(){
-        $(this).toggleClass("active");
-        $(".collapse").slideToggle();
-    
-        $(".collapse a").click(function(){
-            $('.collapse').slideUp();
-            $(".menu").removeClass("active");
-        });
-       
-    });
-
-
-            
-        </script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/common.js"></script>
+        
 </body>
 
 </html>
